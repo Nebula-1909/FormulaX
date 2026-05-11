@@ -1,0 +1,159 @@
+/* Добавили плавность на уровне браузера */
+html {
+    scroll-behavior: smooth;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+}
+
+body { 
+    background-color: #0f172a; 
+    color: white; 
+    line-height: 1.6; 
+}
+
+header { 
+    background-color: #111827; 
+    padding: 20px; 
+    border-bottom: 2px solid #2563eb; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+.logo { 
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #60a5fa; 
+    display: flex; 
+    align-items: center; 
+}
+
+.logo img { 
+    height: 45px; 
+    margin-right: 12px; 
+    border-radius: 25%; 
+    overflow: hidden; 
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.menu { 
+    display: flex; 
+    gap: 40px; 
+}
+
+.menu a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+}
+
+.menu a:hover { 
+    color: #60a5fa; 
+}
+
+.hero { 
+    min-height: 60vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 40px 20px; 
+}
+
+.hero h1 { 
+    font-size: 64px; 
+    margin-bottom: 20px; 
+    color: #60a5fa; 
+}
+
+.hero p { 
+    font-size: 22px; 
+    color: #94a3b8; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.features { 
+    padding: 60px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.features h2 { 
+    text-align: center; 
+    font-size: 32px; 
+    margin-bottom: 40px; 
+    color: #60a5fa; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+.card { 
+    background-color: #1e293b; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 1px solid #334155; 
+    text-align: center; 
+}
+
+.card h3 { 
+    margin-bottom: 15px; 
+    color: #fbbf24; 
+}
+
+.download-section { 
+    padding: 100px 20px; 
+    text-align: center; 
+    background-color: #0b1120; 
+}
+
+.download-btn { 
+    display: inline-block; 
+    padding: 18px 45px; 
+    background-color: #2563eb; 
+    color: white; 
+    text-decoration: none; 
+    font-size: 20px; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    transition: 0.3s;
+}
+
+.download-btn:hover { 
+    background-color: #1d4ed8; 
+    transform: scale(1.05); 
+}
+
+footer { 
+    text-align: center; 
+    padding: 40px; 
+    background-color: #0b1120; 
+    border-top: 1px solid #1e293b; 
+    color: #64748b; 
+}
+
+@media(max-width: 768px){
+    .hero h1 { font-size: 42px; }
+    nav { justify-content: center; }
+    .menu { gap: 20px; }
+}
