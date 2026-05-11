@@ -1,4 +1,4 @@
-/* Добавили плавность на уровне браузера */
+/* Плавность и базовые настройки */
 html {
     scroll-behavior: smooth;
 }
@@ -7,37 +7,24 @@ html {
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    font-family: Arial, sans-serif; 
+    font-family: 'Segoe UI', Arial, sans-serif; /* Добавил более современный шрифт */
 }
 
 body { 
     background-color: #0f172a; 
     color: white; 
-    line-height: 1.6; 
+    line-height: 1.6;
+    overflow-x: hidden; /* Важно: убирает боковую прокрутку */
+    width: 100%;
 }
 
 header { 
     background-color: #111827; 
-    padding: 20px; 
+    padding: 15px 20px; 
     border-bottom: 2px solid #2563eb; 
     position: sticky; 
     top: 0; 
     z-index: 100; 
-}
-
-.logo { 
-    font-size: 28px; 
-    font-weight: bold; 
-    color: #60a5fa; 
-    display: flex; 
-    align-items: center; 
-}
-
-.logo img { 
-    height: 45px; 
-    margin-right: 12px; 
-    border-radius: 25%; 
-    overflow: hidden; 
 }
 
 nav { 
@@ -50,9 +37,24 @@ nav {
     gap: 15px; 
 }
 
+.logo { 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #60a5fa; 
+    display: flex; 
+    align-items: center; 
+}
+
+.logo img { 
+    height: 40px; 
+    margin-right: 12px; 
+    border-radius: 8px; 
+    object-fit: contain;
+}
+
 .menu { 
     display: flex; 
-    gap: 40px; 
+    gap: 25px; 
 }
 
 .menu a { 
@@ -61,34 +63,38 @@ nav {
     font-size: 14px; 
     text-transform: uppercase; 
     font-weight: bold; 
+    transition: 0.3s;
 }
 
 .menu a:hover { 
     color: #60a5fa; 
 }
 
+/* Секция Hero (Главная) */
 .hero { 
-    min-height: 60vh; 
+    min-height: 70vh; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
     text-align: center; 
-    padding: 40px 20px; 
+    padding: 60px 20px; 
 }
 
 .hero h1 { 
-    font-size: 64px; 
+    font-size: clamp(32px, 8vw, 64px); /* Шрифт подстраивается под экран сам */
     margin-bottom: 20px; 
     color: #60a5fa; 
+    line-height: 1.1;
 }
 
 .hero p { 
-    font-size: 22px; 
+    font-size: clamp(16px, 4vw, 22px);
     color: #94a3b8; 
     max-width: 800px; 
     margin: 0 auto; 
 }
 
+/* Секция возможностей */
 .features { 
     padding: 60px 20px; 
     max-width: 1200px; 
@@ -97,13 +103,14 @@ nav {
 
 .features h2 { 
     text-align: center; 
-    font-size: 32px; 
+    font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 40px; 
     color: #60a5fa; 
 }
 
 .grid { 
     display: grid; 
+    /* Карточки подстраиваются под ширину */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px; 
 }
@@ -114,6 +121,12 @@ nav {
     border-radius: 15px; 
     border: 1px solid #334155; 
     text-align: center; 
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
 }
 
 .card h3 { 
@@ -121,39 +134,54 @@ nav {
     color: #fbbf24; 
 }
 
+/* Секция скачивания */
 .download-section { 
-    padding: 100px 20px; 
+    padding: 80px 20px; 
     text-align: center; 
     background-color: #0b1120; 
 }
 
 .download-btn { 
     display: inline-block; 
-    padding: 18px 45px; 
+    padding: 16px 40px; 
     background-color: #2563eb; 
     color: white; 
     text-decoration: none; 
-    font-size: 20px; 
+    font-size: 18px; 
     border-radius: 12px; 
     font-weight: bold; 
     transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .download-btn:hover { 
     background-color: #1d4ed8; 
     transform: scale(1.05); 
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
 footer { 
     text-align: center; 
-    padding: 40px; 
+    padding: 30px; 
     background-color: #0b1120; 
     border-top: 1px solid #1e293b; 
     color: #64748b; 
 }
 
-@media(max-width: 768px){
-    .hero h1 { font-size: 42px; }
-    nav { justify-content: center; }
-    .menu { gap: 20px; }
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    nav { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .menu { 
+        gap: 15px; 
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 40px 10px;
+    }
 }
