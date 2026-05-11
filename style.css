@@ -170,10 +170,13 @@ footer {
     }
     
     .menu { 
-        gap: 15px; 
+        gap: 10px;
         width: 100%;
         justify-content: center;
-        padding-top: 10px;
+    }
+
+    .menu a {
+        font-size: 11px;
     }
 
     .hero {
