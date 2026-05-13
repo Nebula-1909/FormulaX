@@ -1,37 +1,201 @@
-.screenshots {
-    padding: 30px 20px;
+html {
+    scroll-behavior: smooth;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body { 
+    background-color: #0f172a; 
+    color: white; 
+    line-height: 1.6;
+    overflow-x: hidden;
     width: 100%;
-    overflow: hidden;
+}
+
+header { 
+    background-color: #111827; 
+    padding: 15px 20px; 
+    border-bottom: 2px solid #2563eb; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.logo { 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #60a5fa; 
+    display: flex; 
+    align-items: center; 
+}
+
+.logo img { 
+    height: 40px; 
+    margin-right: 12px; 
+    border-radius: 8px; 
+    object-fit: contain;
+}
+
+.menu { 
+    display: flex; 
+    gap: 25px; 
+}
+
+.menu a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    transition: 0.3s;
+}
+
+.menu a:hover { 
+    color: #60a5fa; 
+}
+
+.hero { 
+    min-height: 50vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 30px 20px; 
+}
+
+.hero h1 { 
+    font-size: clamp(32px, 8vw, 64px); 
+    margin-bottom: 20px; 
+    color: #60a5fa; 
+    line-height: 1.1;
+}
+
+.hero p { 
+    font-size: clamp(16px, 4vw, 22px);
+    color: #94a3b8; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.features { 
+    padding: 30px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.features h2 { 
+    text-align: center; 
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 40px; 
+    color: #60a5fa; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+.card { 
+    background-color: #1e293b; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 1px solid #334155; 
+    text-align: center; 
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+}
+
+.card h3 { 
+    margin-bottom: 15px; 
+    color: #fbbf24; 
+}
+
+/* СЕКЦИЯ СКРИНШОТОВ */
+.screenshots {
+    padding: 40px 20px;
+    width: 100%;
     text-align: center;
+}
+
+.screenshots h2 {
+    color: #60a5fa;
+    margin-bottom: 30px;
 }
 
 .screenshot-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: nowrap;
-    max-width: 100%;
+    overflow-x: auto;
+    padding: 10px;
 }
 
 .screenshot-container img {
-    height: 320px; 
+    height: 320px;
     width: auto;
     border-radius: 12px;
     border: 2px solid #334155;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
-    .screenshot-container {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 15px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .screenshot-container img {
-        height: 250px;
-    }
+.download-section { 
+    padding: 80px 20px; 
+    text-align: center; 
+    background-color: #0b1120; 
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 16px 40px; 
+    background-color: #2563eb; 
+    color: white !important; 
+    text-decoration: none; 
+    font-size: 18px; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn:hover { 
+    background-color: #1d4ed8; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+footer { 
+    text-align: center; 
+    padding: 30px; 
+    background-color: #0b1120; 
+    border-top: 1px solid #1e293b; 
+    color: #64748b; 
+}
+
+@media (max-width: 768px) {
+    nav { flex-direction: column; }
+    .menu { gap: 10px; justify-content: center; }
+    .menu a { font-size: 11px; }
+    .screenshot-container img { height: 250px; }
 }
