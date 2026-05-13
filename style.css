@@ -1,190 +1,40 @@
-html {
-    scroll-behavior: smooth;
+/* Стили для скриншотов */
+.screenshots {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-body { 
-    background-color: #0f172a; 
-    color: white; 
-    line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-header { 
-    background-color: #111827; 
-    padding: 15px 20px; 
-    border-bottom: 2px solid #2563eb; 
-    position: sticky; 
-    top: 0; 
-    z-index: 100; 
-}
-
-nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    flex-wrap: wrap; 
-    gap: 15px; 
-}
-
-.logo { 
-    font-size: 24px; 
-    font-weight: bold; 
-    color: #60a5fa; 
-    display: flex; 
-    align-items: center; 
-}
-
-.logo img { 
-    height: 40px; 
-    margin-right: 12px; 
-    border-radius: 8px; 
-    object-fit: contain;
-}
-
-.menu { 
-    display: flex; 
-    gap: 25px; 
-}
-
-.menu a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 14px; 
-    text-transform: uppercase; 
-    font-weight: bold; 
-    transition: 0.3s;
-}
-
-.menu a:hover { 
-    color: #60a5fa; 
-}
-
-.hero { 
-    min-height: 50vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    padding: 30px 20px; 
-}
-
-.hero h1 { 
-    font-size: clamp(32px, 8vw, 64px); 
-    margin-bottom: 20px; 
-    color: #60a5fa; 
-    line-height: 1.1;
-}
-
-.hero p { 
-    font-size: clamp(16px, 4vw, 22px);
-    color: #94a3b8; 
-    max-width: 800px; 
-    margin: 0 auto; 
-}
-
-.features { 
-    padding: 30px 20px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-.features h2 { 
-    text-align: center; 
+.screenshots h2 {
+    color: #60a5fa;
+    margin-bottom: 40px;
     font-size: clamp(24px, 5vw, 32px);
-    margin-bottom: 40px; 
-    color: #60a5fa; 
 }
 
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 20px; 
+.screenshot-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Чтобы на мобилках падали друг под друга */
 }
 
-.card { 
-    background-color: #1e293b; 
-    padding: 30px; 
-    border-radius: 15px; 
-    border: 1px solid #334155; 
-    text-align: center; 
-    transition: 0.3s;
+.screenshot-container img {
+    width: 280px; /* Оптимальная ширина для мобильных скринов */
+    border-radius: 20px; /* Скругление как у иконки */
+    border: 3px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.screenshot-container img:hover {
+    transform: scale(1.03); /* Эффект при наведении */
     border-color: #60a5fa;
 }
 
-.card h3 { 
-    margin-bottom: 15px; 
-    color: #fbbf24; 
-}
-
-.download-section { 
-    padding: 80px 20px; 
-    text-align: center; 
-    background-color: #0b1120; 
-}
-
-.btn { 
-    display: inline-block; 
-    padding: 16px 40px; 
-    background-color: #2563eb; 
-    color: white !important; 
-    text-decoration: none; 
-    font-size: 18px; 
-    border-radius: 12px; 
-    font-weight: bold; 
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.btn:hover { 
-    background-color: #1d4ed8; 
-    transform: scale(1.05); 
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-footer { 
-    text-align: center; 
-    padding: 30px; 
-    background-color: #0b1120; 
-    border-top: 1px solid #1e293b; 
-    color: #64748b; 
-}
-
 @media (max-width: 768px) {
-    nav { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    
-    .menu { 
-        gap: 10px;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .menu a {
-        font-size: 11px;
-    }
-
-    .hero {
-        padding: 40px 15px;
-    }
-
-    .btn {
-        width: 100%;
+    .screenshot-container img {
+        width: 80%; /* На маленьких экранах пошире */
         max-width: 300px;
     }
 }
